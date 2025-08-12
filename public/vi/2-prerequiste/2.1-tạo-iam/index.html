@@ -12,21 +12,21 @@
     <title>tạo IAM Role :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1754980741" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1754980741" rel="stylesheet">
-    <link href="/css/hybrid.css?1754980741" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1754980741" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1754980741" rel="stylesheet">
-    <link href="/css/auto-complete.css?1754980741" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1754980741" rel="stylesheet">
-    <link href="/css/theme.css?1754980741" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1754980741" rel="stylesheet">
+    <link href="/css/nucleus.css?1754984556" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1754984556" rel="stylesheet">
+    <link href="/css/hybrid.css?1754984556" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1754984556" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1754984556" rel="stylesheet">
+    <link href="/css/auto-complete.css?1754984556" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1754984556" rel="stylesheet">
+    <link href="/css/theme.css?1754984556" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1754984556" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1754980741" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1754984556" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1754980741"></script>
+    <script src="/js/jquery-3.3.1.min.js?1754984556"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1754980741"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1754980741"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1754984556"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1754984556"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1754980741"></script>
+<script type="text/javascript" src="/js/search.js?1754984556"></script>
 
     
   </div>
@@ -324,13 +324,13 @@
  
   
     
-  <li data-nav-id="/vi/4-cleanup/" title="" class="dd-item 
+  <li data-nav-id="/vi/4-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
     
     
     
     ">
       <a href="/vi/4-cleanup/">
-          
+          <b>4. </b>Dọn dẹp tài nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -520,27 +520,27 @@
 <p>Trong bước này chúng ta sẽ tiến hành tạo IAM Role.</p>
 <ol>
 <li>Truy cập vào <a href="https://console.aws.amazon.com/iamv2/">giao diện quản trị dịch vụ IAM</a><br>
-<img src="/images/2.prerequisite/001-iam.png" alt="role"></li>
+<img src="/000058-SessionManager/images/2.prerequisite/001-iam.png" alt="role"></li>
 </ol>
 <p>Ở thanh task bên trái chọn User
-<img src="/images/2.prerequisite/002-iam.png" alt="role">
+<img src="/000058-SessionManager/images/2.prerequisite/002-iam.png" alt="role">
 Sau đó bấm chọn Create User</p>
-<p><img src="/images/2.prerequisite/003-iam.png" alt="role"></p>
+<p><img src="/000058-SessionManager/images/2.prerequisite/003-iam.png" alt="role"></p>
 <p>Tiến hành đặt tên và tích chọn vào Provide user access to the AWS Management Console Bạn có thể chọn tự tạo mật khẩu hoặc để AWS tự tạo cho bạn sau đó bấm <strong>Next</strong> Bạn sẽ được đưa tới giao diện setpermissions Chọn các lựa chọn như trong ảnh</p>
 <ul>
 <li><strong>AdministratorAccess</strong></li>
 </ul>
 <p>sau đó bấm <strong>Next</strong>
-<img src="/images/2.prerequisite/004-iam.png" alt="role">
+<img src="/000058-SessionManager/images/2.prerequisite/004-iam.png" alt="role">
 Xem và kiểm tra kỹ các lựa chọn</p>
 <p>Sau khi thành công mà hình sẽ hiển thị như sau:</p>
 <p>có thể chọn tải Download .csv file để lưu lại tài khoản
 Sau đó copy link ở phần <strong>Console sign-in URL</strong>
-<img src="/images/2.prerequisite/005-iam.png" alt="role"></p>
+<img src="/000058-SessionManager/images/2.prerequisite/005-iam.png" alt="role"></p>
 <p>Sau đó tiến hành đăng nhập vào account được cung cấp và tiến hành đổi mật khẩu
-<img src="/images/2.prerequisite/006-iam.png" alt="role"></p>
+<img src="/000058-SessionManager/images/2.prerequisite/006-iam.png" alt="role"></p>
 <p>Sau khi đăng nhập thành công sẽ hiện thị ra như sau
-<img src="/images/2.prerequisite/007-iam.png" alt="role">
+<img src="/000058-SessionManager/images/2.prerequisite/007-iam.png" alt="role">
 và tiến hành thực hiện các bước tiếp theo</p>
 
 
@@ -755,19 +755,19 @@ và tiến hành thực hiện các bước tiếp theo</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1754980741"></script>
-    <script src="/js/perfect-scrollbar.min.js?1754980741"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1754980741"></script>
-    <script src="/js/jquery.sticky.js?1754980741"></script>
-    <script src="/js/featherlight.min.js?1754980741"></script>
-    <script src="/js/highlight.pack.js?1754980741"></script>
+    <script src="/js/clipboard.min.js?1754984556"></script>
+    <script src="/js/perfect-scrollbar.min.js?1754984556"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1754984556"></script>
+    <script src="/js/jquery.sticky.js?1754984556"></script>
+    <script src="/js/featherlight.min.js?1754984556"></script>
+    <script src="/js/highlight.pack.js?1754984556"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1754980741"></script>
-    <script src="/js/learn.js?1754980741"></script>
-    <script src="/js/hugo-learn.js?1754980741"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1754984556"></script>
+    <script src="/js/learn.js?1754984556"></script>
+    <script src="/js/hugo-learn.js?1754984556"></script>
 
-    <link href="/mermaid/mermaid.css?1754980741" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1754980741"></script>
+    <link href="/mermaid/mermaid.css?1754984556" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1754984556"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

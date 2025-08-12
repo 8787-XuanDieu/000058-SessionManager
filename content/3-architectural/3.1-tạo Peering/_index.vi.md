@@ -16,13 +16,13 @@ pre : " <b> 3.1 </b> "
 - Tìm VPC
 - Chọn VPC  
 
-![role](/images/3.connect/001-vpc.png)
+![role](/000058-SessionManager/images/3.connect/001-vpc.png)
 
 2. Trong giao diện VPC
 - Chọn Peering Connections
 - Chọn Create Peering Connection
 
-![role](/images/3.connect/002-vpc.png)
+![role](/000058-SessionManager/images/3.connect/002-vpc.png)
 
 3. Trong giao diện Create Peering Connection
 - Nhập Name **Hub-to-WebApp**
@@ -32,18 +32,18 @@ pre : " <b> 3.1 </b> "
 - Chọn **VPC ID (Accepter)** Web-App-vpc
 - Chọn **Creat peering connection**
 
-![role](/images/3.connect/004-vpc.png)
+![role](/000058-SessionManager/images/3.connect/004-vpc.png)
 
 4. Accept request cho Peering Connection
 
 - Chọn **Actions**
 - Chọn **Accept request**
 
-![role](/images/3.connect/005-vpc.png)
+![role](/000058-SessionManager/images/3.connect/005-vpc.png)
 
 5. Tiếp tục lập lại các bước trên với **Hub-to-Management**
 
-![role](/images/3.connect/006-vpc.png)
+![role](/000058-SessionManager/images/3.connect/006-vpc.png)
 
 - Chọn **Actions**
 - Chọn **Accept request**
@@ -54,14 +54,14 @@ Lấy ID Database-vpc
 - Chọn **Your VPC**
 - Copy **VPC ID Database-vpc**
 
-![role](/images/3.connect/007-vpc.png)
+![role](/000058-SessionManager/images/3.connect/007-vpc.png)
 
 Tạo Peering Cross-region.
 - Quay về N. Virginia (us-east-1)
 - Chọn Peering Connections
 - Chọn Create Peering Connection
 
-![role](/images/3.connect/008-vpc.png)
+![role](/000058-SessionManager/images/3.connect/008-vpc.png)
 - Nhập Name **Hub-to-Database-CrossRegion**
 - Chọn **VPC ID (Requester)** Hub-vpc
 - Chọn **My account**
@@ -70,16 +70,16 @@ Tạo Peering Cross-region.
 - Dán **VPC ID Database-vpc đã copy từ Oregon (us-west-2)**
 - Chọn **Creat peering connection**
 
-![role](/images/3.connect/009-vpc.png)
+![role](/000058-SessionManager/images/3.connect/009-vpc.png)
 
 Accept request cho Hub-to-Database-CrossRegion.
 - Chuyển sang region Oregon (us-west-2)
 - Chọn **Actions**
 - Chọn **Accept request**
 
-![role](/images/3.connect/010-vpc.png)
+![role](/000058-SessionManager/images/3.connect/010-vpc.png)
 
 7. Kiểm tra kết quả.
 - Quay về N. Virginia (us-east-1), sẽ thấy 3 Peering Connection được tạo.
 
-![role](/images/3.connect/011-vpc.png)
+![role](/000058-SessionManager/images/3.connect/011-vpc.png)
