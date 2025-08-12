@@ -1,0 +1,85 @@
+[
+{
+	"uri": "//localhost:1313/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Kiến Trúc Mạng Đa Tài Khoản An Toàn trên AWS Muốn quản lý cả đống tài khoản AWS mà vẫn an toàn, dễ kiểm soát, lại không tốn kém? Kiến trúc này dùng AWS Organizations, Systems Manager Session Manager, Transit Gateway để tạo hệ thống bảo mật tập trung, kiểm soát truy cập liên tài khoản, giám sát tuân thủ siêu chặt. Dưới đây là demo thiết kế đáp ứng yêu cầu: chiến lược tài khoản, bảo mật, mạng, tuân thủ, giám sát, xử lý sự cố, và phân bổ chi phí.\nLợi ích của Kiến Trúc:\nBỏ cổng SSH, không cần Bastion Host, giảm nguy cơ bị hack. Quản lý truy cập tập trung qua IAM, dễ kiểm soát liên tài khoản. Kết nối mạng an toàn qua Transit Gateway, chẳng cần Internet. Tự động tuân thủ với Security Hub, AWS Config, đạt chuẩn PCI DSS, HIPAA. Ghi log mọi thứ, dễ điều tra với CloudTrail, Athena. Phân bổ chi phí rõ ràng với Cost Explorer, tiết kiệm tiền. Kiến trúc này dùng Organizations, Session Manager, Transit Gateway, Security Hub, CloudTrail để tạo mạng đa tài khoản an toàn, quản lý dễ, tuân thủ chặt, xử lý sự cố nhanh, và chia chi phí rõ ràng. Siêu đơn giản, siêu chắc chắn cho tổ chức lớn!\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-architectural/3.1-t%E1%BA%A1o-peering/",
+	"title": "Kết nối Peering",
+	"tags": [],
+	"description": "",
+	"content": "Tạo kết nối Peering Ở Bước này, bạn sẽ tạo kết nối VPC Peering (VPC Peering Connection).\nWebApp ↔ Hub Management ↔ Hub Hub ↔ Database VPC Peering cho phép các tài nguyên trong hai VPC khác nhau giao tiếp với nhau như thể chúng đang nằm trong cùng một mạng. Đăng nhập vào AWS Management Console Tìm VPC Chọn VPC Trong giao diện VPC Chọn Peering Connections Chọn Create Peering Connection Trong giao diện Create Peering Connection Nhập Name Hub-to-WebApp Chọn VPC ID (Requester) Hub-vpc Chọn My account Chọn This Region (us-east-1) Chọn VPC ID (Accepter) Web-App-vpc Chọn Creat peering connection Accept request cho Peering Connection Chọn Actions Chọn Accept request Tiếp tục lập lại các bước trên với Hub-to-Management Chọn Actions Chọn Accept request Tiếp tục tạo Peering Cross-region giữa Hub và Database. Lấy ID Database-vpc Chuyển sang region Oregon (us-west-2) Chọn Your VPC Copy VPC ID Database-vpc Tạo Peering Cross-region.\nQuay về N. Virginia (us-east-1) Chọn Peering Connections Chọn Create Peering Connection Nhập Name Hub-to-Database-CrossRegion Chọn VPC ID (Requester) Hub-vpc Chọn My account Chọn Another Region Chọn Oregon (us-west-2) Dán VPC ID Database-vpc đã copy từ Oregon (us-west-2) Chọn Creat peering connection Accept request cho Hub-to-Database-CrossRegion.\nChuyển sang region Oregon (us-west-2) Chọn Actions Chọn Accept request Kiểm tra kết quả. Quay về N. Virginia (us-east-1), sẽ thấy 3 Peering Connection được tạo. "
+},
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "Session Management",
+	"tags": [],
+	"description": "",
+	"content": "Kiến Trúc Mạng Đa Tài Khoản An Toàn trên AWS Nội dung Giới thiệu Các bước chuẩn bị Mô hình kiến trúc Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-t%E1%BA%A1o-iam/",
+	"title": "tạo IAM Role",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM Role Trong bước này chúng ta sẽ tiến hành tạo IAM Role.\nTruy cập vào giao diện quản trị dịch vụ IAM\nỞ thanh task bên trái chọn User Sau đó bấm chọn Create User\nTiến hành đặt tên và tích chọn vào Provide user access to the AWS Management Console Bạn có thể chọn tự tạo mật khẩu hoặc để AWS tự tạo cho bạn sau đó bấm Next Bạn sẽ được đưa tới giao diện setpermissions Chọn các lựa chọn như trong ảnh\nAdministratorAccess sau đó bấm Next Xem và kiểm tra kỹ các lựa chọn\nSau khi thành công mà hình sẽ hiển thị như sau:\ncó thể chọn tải Download .csv file để lưu lại tài khoản Sau đó copy link ở phần Console sign-in URL Sau đó tiến hành đăng nhập vào account được cung cấp và tiến hành đổi mật khẩu Sau khi đăng nhập thành công sẽ hiện thị ra như sau và tiến hành thực hiện các bước tiếp theo\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung [Tạo IAM role] [Tạo Pvc] [Tạo Subnet] [Tạo Router table] "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.2-t%E1%BA%A1o-vpc/",
+	"title": "Tạo VPC ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Lab VPC Truy cập giao diện quản trị dịch vụ VPC Click Your VPC. Click Create VPC. Tại trang Create VPC. Tại mục Name tag điền Linux-vpc. Tại mục IPv4 CIDR điền : 10.10.0.0/16. Click Create VPC. "
+},
+{
+	"uri": "//localhost:1313/vi/3-architectural/",
+	"title": "mô hình kiến trúc",
+	"tags": [],
+	"description": "",
+	"content": "Nội dung [Tạo IAM role] [Tạo Pvc] [Tạo Subnet] [Tạo Router table] "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.3-t%E1%BA%A1o-subnet/",
+	"title": "Tạo Subnet ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Subnet Truy cập vào VPC console Ở đây chúng ta tiến hành tạo 2 subnet Ở thanh task bên trái chọn subnet Chọn create subnet\nTrong phần tạo subnet chọn VPC mà bạn mới tạo sau đó bấm Create subnet\nĐến phần cấu hình cho private subnet 1 chọn giống với ảnh dưới đây Sau đó bấm Create Subnet\nLặp lại các bước trên với subnet còn lại nhưng phải chú ý điền giống ảnh Sau khi tạo xong sẽ có 2 subnet như sau "
+},
+{
+	"uri": "//localhost:1313/vi/4-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\n1. Xóa VPC và các tài nguyên liên quan 1.1 Trước tiên hãy **Detach Internet Gateways**\rTruy cập vào VPC ở thanh task bên trái chọn Internet Gateways\nTích chọn vào Internet Gateways đã tạo -\u0026gt; chọn Actions -\u0026gt; Detach from VPC\nChọn Actions -\u0026gt; Delete Internet gateways\n1.2 Xóa Router Table Vì đã xóa Internet Gateways trước đó nên vào Router Table để Remove Internet Gateways đã thêm trong mục Edit Router nếu không sẽ không xóa được Router Table\nChọn vào Router Table đã tạo -\u0026gt; Action -\u0026gt; Chọn Edit Router tìm tới mục có Target chứa Internet Gateways hãy Remove nó và bấm Save Changes\nVẫn chọn vào Router Table đã tạo -\u0026gt; Action -\u0026gt; Chọn Edit subnet associations bỏ chọn 2 subnet đã tạo -\u0026gt; Bấm Save Changes\nChọn Router Table đã tạo -\u0026gt; Chọn Delete Route Table\n1.3 Xóa Subnet Tích chọn vào 2 Subnet đã tạo -\u0026gt; Chọn Actions -\u0026gt; Delete Subnet\n1.4 Xóa YourVPCs Tích chọn VPC đã tạo -\u0026gt; Chọn Actions -\u0026gt; Delete VPC\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.4-t%E1%BA%A1o-router-table/",
+	"title": "Tạo Router Table ",
+	"tags": [],
+	"description": "",
+	"content": "Tạo Router Table Ở giao diện VPC ở thanh task bên trái chọn Router Table Bấm vào Create Table\nCấu hình cho Router Table\nVPC chọn VPC mà bạn đã tạo\nSau đó bấm Create Table\nSau khi tạo thành công màn hình sẽ hiển thị\nỞ bước này chúng ta tiến hành Internet Gateways cho router table\nỞ giao diện VPC chọn Internet Gateways Sau đó bấm Create Internet Gateways Điền thông tin cho Internet Gateways\nSau khi điền thông tin cho Internet Gateways bấm Create Internet Gateways Sau đó tiến hành Attack to VPC vào VPC đã tạo Chọn Action -\u0026gt; Attack to VPC Cấu hình cho Internet Gateways Sau đó bấm Attack Internet Gateways Sau khi Attack thành công sẽ hiện như sau: "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
